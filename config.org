@@ -1,3 +1,9 @@
+#+TITLE: My Doom Emacs Configuration
+
+* Global Settings
+  These are my primary settings for user identity, fonts, and themes.
+
+#+BEGIN_SRC emacs-lisp
 (setq user-full-name "William Otto"
       user-mail-address "ottwil01@gmail.com")
 
@@ -5,14 +11,29 @@
 (setq display-line-numbers-type t)
 (setq org-directory "~/org/")
 (setq default-frame-alist '((fullscreen . maximized)))
+#+END_SRC
 
+* Splash Screen
+  I'm setting a custom splash image for Doom's startup screen.
+
+#+BEGIN_SRC emacs-lisp
 (setq fancy-splash-image "~/.config/doom/Emacs_Splash.png")
+#+END_SRC
 
+* AUCTeX Configuration
+  This section configures AUCTeX to use PDF Tools for viewing and automatically refreshes the PDF buffer after compilation.
+
+#+BEGIN_SRC emacs-lisp
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
       TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view)))
 (add-hook 'TeX-after-compilation-finished-functions
           #'TeX-revert-document-buffer)
+#+END_SRC
 
+* mu4e Email Client
+  This is my configuration for the mu4e email client.
+
+#+BEGIN_SRC emacs-lisp
 (setq
  mu4e-maildir "~/mail/gmail"
  mu4e-get-mail-command "mbsync -a"
@@ -21,7 +42,12 @@
  mu4e-sent-folder "/[Gmail].Sent Mail"
  mu4e-trash-folder "/[Gmail].Trash"
  message-send-mail-function 'msmtp-send-it)
+#+END_SRC
 
+* Zone Matrix
+  This section contains my Zone Matrix settings. The load paths are commented out as they are handled by Doom's module system.
+
+#+BEGIN_SRC emacs-lisp
 ;; (add-to-list 'load-path (expand-file-name "~/.config/doom/zone"))
 ;; (require 'zone-matrix)
 ;; (require 'zone-matrix-settings)
@@ -29,3 +55,4 @@
 
 ;; (setq zone-programs [zone-matrix])
 ;; (zone-when-idle 60)
+#+END_SRC
