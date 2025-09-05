@@ -29,3 +29,16 @@
 
 ;; (setq zone-programs [zone-matrix])
 ;; (zone-when-idle 60)
+
+(setq haskell-ghc-config-notify-if-nix-on-path nil)
+(load! "custom/stack-commands")
+(setenv "PATH" (concat (getenv "PATH") ":/Users/will/.local/bin:/Users/will/.ghcup/bin"))
+(after! lsp-haskell
+  (setq lsp-haskell-server-path "/Users/will/.ghcup/bin/haskell-language-server-wrapper")
+  (setq lsp-haskell-server-args '("--lsp" "-d" "-l" "/Users/will/.cache/lsp-haskell.log"))
+  (setq lsp-log-io t))
+
+(setq mouse-yank-at-point t)
+(define-key minibuffer-local-map [mouse-1] nil)
+(define-key minibuffer-local-map [mouse-2] nil)
+(define-key minibuffer-local-map [mouse-3] nil)
