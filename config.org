@@ -1,7 +1,7 @@
 #+TITLE: My Doom Emacs Configuration
 
 * Global Settings
-  These are my primary settings for user identity, fonts, and themes.
+  Primary settings for user identity, fonts, and themes.
 
 #+BEGIN_SRC emacs-lisp
 (setq user-full-name "William Otto"
@@ -14,14 +14,14 @@
 #+END_SRC
 
 * Splash Screen
-  I'm setting a custom splash image for Doom's startup screen.
+  Custom splash image.
 
 #+BEGIN_SRC emacs-lisp
 (setq fancy-splash-image "~/.config/doom/Emacs_Splash.png")
 #+END_SRC
 
 * AUCTeX Configuration
-  This section configures AUCTeX to use PDF Tools for viewing and automatically refreshes the PDF buffer after compilation.
+  Configures AUCTeX to use PDF Tools for viewing and automatically refreshes the PDF buffer after compilation.
 
 #+BEGIN_SRC emacs-lisp
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
@@ -31,7 +31,7 @@
 #+END_SRC
 
 * mu4e Email Client
-  This is my configuration for the mu4e email client.
+  Configuration for the mu4e email client.
 
 #+BEGIN_SRC emacs-lisp
 (setq
@@ -45,7 +45,7 @@
 #+END_SRC
 
 * Zone Matrix
-  This section contains my Zone Matrix settings. The load paths are commented out as they are handled by Doom's module system.
+  This section contains my Zone Matrix settings. (not in use)
 
 #+BEGIN_SRC emacs-lisp
 ;; (add-to-list 'load-path (expand-file-name "~/.config/doom/zone"))
@@ -68,6 +68,9 @@
   (setq lsp-haskell-server-path "/Users/will/.ghcup/bin/haskell-language-server-wrapper")
   (setq lsp-haskell-server-args '("--lsp" "-d" "-l" "/Users/will/.cache/lsp-haskell.log"))
   (setq lsp-log-io t))
+(after! haskell-mode
+  (setq haskell-process-auto-start-on-load nil)
+  (setq haskell-completion-backend 'lsp))
 #+END_SRC
 
 * Mouse Configuration

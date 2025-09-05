@@ -37,6 +37,9 @@
   (setq lsp-haskell-server-path "/Users/will/.ghcup/bin/haskell-language-server-wrapper")
   (setq lsp-haskell-server-args '("--lsp" "-d" "-l" "/Users/will/.cache/lsp-haskell.log"))
   (setq lsp-log-io t))
+(after! haskell-mode
+  (setq haskell-process-auto-start-on-load nil)
+  (setq haskell-completion-backend 'lsp))
 
 (setq mouse-yank-at-point t)
 (define-key minibuffer-local-map [mouse-1] nil)
