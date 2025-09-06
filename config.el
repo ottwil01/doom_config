@@ -8,6 +8,9 @@
 
 (setq fancy-splash-image "~/.config/doom/Emacs_Splash.png")
 
+(setq delete-by-moving-to-trash t
+      trash-directory "~/.Trash")
+
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
       TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view)))
 (add-hook 'TeX-after-compilation-finished-functions

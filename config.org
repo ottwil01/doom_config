@@ -20,6 +20,13 @@
 (setq fancy-splash-image "~/.config/doom/Emacs_Splash.png")
 #+END_SRC
 
+* Dired Settings
+
+** Making deleted settings go to trash can
+#+BEGIN_SRC emacs-lisp
+(setq delete-by-moving-to-trash t
+      trash-directory "~/.Trash")
+#+END_SRC
 * AUCTeX Configuration
   Configures AUCTeX to use PDF Tools for viewing and automatically refreshes the PDF buffer after compilation.
 
